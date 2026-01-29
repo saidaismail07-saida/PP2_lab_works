@@ -5,7 +5,6 @@ name="Bob" #str
 
 #2
 numbers = [1,2,3] #list
-letters= [ a,b,c] #list
 
 #3
 x=tuple(("apple", "banana")) #tuple
