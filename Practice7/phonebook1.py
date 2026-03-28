@@ -36,6 +36,10 @@ def update_contact(name, new_phone):
     cur.execute("UPDATE contacts SET phone=%s WHERE name=%s", (new_phone, name))
     conn.commit()
 
+def update_contact_name(old_name, new_name):
+    cur.execute("UPDATE contacts SET name=%s WHERE name=%s", (new_name, old_name))
+    conn.commit()
+
 
 def find_contact(name):
     cur.execute("SELECT * FROM contacts WHERE name=%s", (name,))
@@ -50,10 +54,11 @@ def delete_contact(name):
 while True:
     print("\n1 - Add")
     print("2 - Show")
-    print("3 - Update")
+    print("3 - Update by num")
     print("4 - Find")
     print("5 - Delete")
     print("6 - Load CSV")
+    print("7 - Update by name")
     print("0 - Exit")
 
     choice = input("Choose: ")
@@ -81,6 +86,11 @@ while True:
 
     elif choice == "6":
         load_from_csv()
+
+    elif choice == "7":
+        old_name = input("Old name: ")
+        new_name = input("New name: ")
+        update_contact_name(old_name, new_name)
 
     elif choice == "0":
         break
