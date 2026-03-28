@@ -4,8 +4,8 @@ def get_connection():
     try:
         conn = psycopg2.connect(
             dbname="phonebook_db",     # имя вашей базы данных
-            user="postgres",           # ваш PostgreSQL пользователь
-            password="your_password",  # ваш пароль
+            user="pp2",           # ваш PostgreSQL пользователь
+            password="pp2_password",  # ваш пароль
             host="localhost",
             port="5432"
         )
